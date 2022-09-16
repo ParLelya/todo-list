@@ -62,26 +62,6 @@ body {
   cursor: pointer;
 }
 
-.btn-secondary {
-  color: #373737;
-  background-color: #f3d811;
-}
-
-.btn-secondary:hover {
-  color: #373737;
-  background-color: #f3ca11;
-  -webkit-box-shadow: 2px 2px 2px 2px inset #d9c003ef;
-          box-shadow: 2px 2px 2px 2px inset #d9c003ef;
-}
-
-.btn-secondary:not(:disabled):not(.disabled).active,
-.btn-secondary:not(:disabled):not(.disabled):active,
-.show > .btn-secondary.dropdown-toggle {
-  color: #373737;
-  background-color: #f3ca11;
-  border: 1px solid #d9c003ef;
-}
-
 .todo__items {
   width: 95vw;
   margin: 10px;

@@ -29,17 +29,11 @@
 			</button>
 		</div>
 
-		<div class="todo__options btn-group btn-group-toggle" data-toggle="buttons">
-			<label class="btn btn-secondary">
-				<input type="radio" name="options" value="active" id="option1" autocomplete="off"> Активные
-			</label>
-			<label class="btn btn-secondary">
-				<input type="radio" name="options" value="completed" id="option2" autocomplete="off"> Завершённые
-			</label>
-			<label class="btn btn-secondary">
-				<input type="radio" name="options" value="deleted" id="option3" autocomplete="off"> Удалённые
-			</label>
-		</div>
+		<select class="todo__options">
+			<option value="active">Активные</option>
+			<option value="completed">Завершённые</option>
+			<option value="deleted">Удалённые</option>
+		</select>
 
 		<ul class="todo__items" data-todo-option="active">
 
