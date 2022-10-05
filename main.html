@@ -14,10 +14,12 @@
 <body>
 	<div class="todo">
 
+		<span class="heading">Tasks for today</span>
+
 		<div class="todo__input">
 			<input class="todo__text" type="text">
 			<button class="todo__add">
-				<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" class="bi bi-calendar-plus"
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#fff" class="bi bi-calendar-plus"
 					viewBox="0 0 16 16">
 					<path
 						d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z">
@@ -29,15 +31,26 @@
 			</button>
 		</div>
 
-		<select class="todo__options">
-			<option value="active">Активные</option>
-			<option value="completed">Завершённые</option>
-			<option value="deleted">Удалённые</option>
-		</select>
-
-		<ul class="todo__items" data-todo-option="active">
-
-		</ul>
+		<div class="todo__items">
+			<span class="todo__item">
+				<label class="todo__task">
+					<input type="checkbox" name="checkbox" class="todo__item-check">
+					Пример задачи на сегодня
+				</label>
+			</span>
+			<span class="todo__item">
+				<label class="todo__task">
+					<input type="checkbox" name="checkbox" class="todo__item-check">
+					Нажатие на календарь добавит задачу
+				</label>
+			</span>
+			<span class="todo__item">
+				<label class="todo__task">
+					<input type="checkbox" name="checkbox" class="todo__item-check">
+					Нажатие на чекбокс отметит задачу выполненной и удалит
+				</label>
+			</span>
+		</div>
 
 	</div>
 	<script src="todoList.js"></script>

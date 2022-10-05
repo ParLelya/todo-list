@@ -1,80 +1,43 @@
-const todo = {
-	action(e) {
-		const target = e.target;
-		if (target.classList.contains('todo__action')) {
-			const action = target.dataset.todoAction
-			const elemItem = target.closest('.todo__item')
+// const fromStorage = localStorage.getItem('todo')
+// if (fromStorage) document.querySelector('.todo__items').innerHTML = fromStorage
 
-			if (action === 'deleted' && elemItem.dataset.todoState === 'deleted') {
-				elemItem.remove();
-			} else {
-				elemItem.dataset.todoState = action;
-				const lexicon = {
-					active: 'восстановлено',
-					completed: 'завершено',
-					deleted: 'удалено'
-				}
-				const elTodoDate = elemItem.querySelector('.todo__date')
-				const html = `<span>${lexicon[action]}: ${new Date().toLocaleString().slice(0, -3)}</span>`
-				elTodoDate.insertAdjacentHTML('beforeend', html)
-			}
+const addTask = document.querySelector(".todo__input")
+const removeTask = document.querySelector(".todo__items")
 
-			this.save()
-		} else if (target.classList.contains('todo__add')) {
-			this.add()
-			this.save()
-		}
-	},
+function add() {
+	console.log("выполянется add()")
+	const inputText = document.querySelector('.todo__text')
+	if (!inputText.value.length) return
+	document.querySelector('.todo__items').insertAdjacentHTML('beforeend', create(inputText.value))
+	inputText.value = ''
+}
 
-	add() {
-		const elemText = document.querySelector('.todo__text')
+function create(text) {
+	console.log("выполянется create(text)")
+	return `<span class="todo__item"><label class="todo__task">
+	<input type="checkbox" name="checkbox" class="todo__item">
+	${text}
+	</label></span>`
+}
 
-		if (elemText.disabled || !elemText.value.length) {
-			return
-		}
+function save() {
+	localStorage.setItem('todo', document.querySelector('.todo__items').innerHTML)
+}
 
-		document.querySelector('.todo__items').insertAdjacentHTML('beforeend', this.create(elemText.value))
+addTask.addEventListener('click', function(event) {
+	console.log("прослушка на добавление повешена")
+	if (event.target.classList.contains('todo__add')) {
+		add()
+		save()
+		console.log("задача добавлена")
+	}})
 
-		elemText.value = ''
-	},
+removeTask.addEventListener('click', function(event) {
+	console.log("прослушка на удаление повешена")
+	if (event.target.classList.contains('todo__item-check')) {
+		event.target.closest('.todo__item').remove()
+		save()
+		console.log("задача выполнена и удалена")
+	}})
 
-	create(text) {
-		const date = JSON.stringify({ add: new Date().toLocaleString().slice(0, -3) });
-		return `<li class="todo__item" data-todo-state="active">
-		<span class="todo__task">
-		  ${text}
-		  <span class="todo__date" data-todo-date="${date}">
-			<span>добавлено: ${new Date().toLocaleString().slice(0, -3)}</span>
-		  </span>
-		</span>
-		<span class="todo__action todo__action_restore" data-todo-action="active"></span>
-		<span class="todo__action todo__action_complete" data-todo-action="completed"></span>
-		<span class="todo__action todo__action_delete" data-todo-action="deleted"></span></li>`
-	},
-
-	init() {
-		const fromStorage = localStorage.getItem('todo')
-
-		if (fromStorage) {
-			document.querySelector('.todo__items').innerHTML = fromStorage;
-		}
-
-		document.querySelector('.todo__options').addEventListener('change', this.update)
-
-		document.addEventListener('click', this.action.bind(this))
-	},
-
-	update() {
-		const option = document.querySelector('.todo__options').value
-
-		document.querySelector('.todo__items').dataset.todoOption = option
-
-		// document.querySelector('.todo__text').disabled = option !== 'active'
-	},
-
-	save() {
-		localStorage.setItem('todo', document.querySelector('.todo__items').innerHTML)
-	},
-};
-
-todo.init()
+//TODO фикс добавления по пробелу, а не по клику на кнопку, фикс удаления добавленных задач
