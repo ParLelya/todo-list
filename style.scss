@@ -45,6 +45,7 @@ body {
   
 .todo__add {
 	position: absolute;
+	z-index: 999;
 	top: 50%;
 	right: 5px;
 	width: 40px;
@@ -85,10 +86,12 @@ body {
 	overflow: hidden;
 	border-radius: 10px;
 	background: linear-gradient(45deg, rgb(248, 229, 87) 25%, rgb(255, 204, 122) 75%);
+	z-index: 999;
 }
 
 .todo__item-check {
 	padding: 5px;
+	z-index: 999;
 }
 
 .todo__task {
