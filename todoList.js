@@ -1,5 +1,5 @@
-const fromStorage = localStorage.getItem('todo')
-if (fromStorage) document.querySelector('.todo__items').innerHTML = fromStorage
+// const fromStorage = localStorage.getItem('todo')
+// if (fromStorage) document.querySelector('.todo__items').innerHTML = fromStorage
 const addTask = document.querySelector(".todo__input")
 const removeTask = document.querySelector(".todo__items")
 

@@ -1,10 +1,10 @@
 body {
   margin: 0;
   font-family: "Lora", serif;
-  font-size: 20px;
+  font-size: 2em;
   font-weight: 400;
   font-style: italic;
-  color: #373737;
+  color: #4e1e4a;
   background: linear-gradient(to right top, rgb(4, 96, 255), rgb(94, 0, 201) 50%, rgb(107, 0, 168) 70%);
   height: 100vh;
 }
@@ -23,11 +23,12 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: 800;
-  padding: 0 20px;
-  margin: 20px;
+  padding: 10px 20px;
+  margin: 40px;
   border-radius: 10px;
+  color: inherit;
   background: linear-gradient(45deg, rgb(248, 229, 87) 25%, rgb(255, 204, 122) 75%);
 }
 
@@ -98,12 +99,28 @@ body {
 .todo__task {
   font-family: inherit;
   color: inherit;
-  transition: -webkit-text-decoration 300ms ease-in-out;
-  transition: text-decoration 300ms ease-in-out;
-  transition: text-decoration 300ms ease-in-out, -webkit-text-decoration 300ms ease-in-out;
+  transition: -webkit-text-decoration 100ms ease-in-out;
+  transition: text-decoration 100ms ease-in-out;
+  transition: text-decoration 100ms ease-in-out, -webkit-text-decoration 100ms ease-in-out;
 }
 .todo__task:active {
   text-decoration: line-through;
-  -webkit-text-decoration-color: #373737;
-          text-decoration-color: #373737;
+  -webkit-text-decoration-color: #a32d60;
+          text-decoration-color: #a32d60;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  background-color: rgba(241, 189, 241, 0.5803921569);
+  color: inherit;
+  font-size: 1rem;
+  font-family: inherit;
+  bottom: 0;
+}
+footer p {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.25rem;
 }/*# sourceMappingURL=style.css.map */
