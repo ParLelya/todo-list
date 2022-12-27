@@ -5,33 +5,21 @@ body {
   font-weight: 400;
   font-style: italic;
   color: #4e1e4a;
-  background: -webkit-gradient(linear, left bottom, right top, from(#0460ff), color-stop(50%, #5e00c9), color-stop(70%, #6b00a8));
   background: linear-gradient(to right top, #0460ff, #5e00c9 50%, #6b00a8 70%);
   height: 100vh;
 }
 
 .todo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
   max-width: 900px;
   margin: 15px auto;
 }
 
 .heading {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
+  align-self: center;
   width: fit-content;
   font-size: 2rem;
   font-weight: 800;
@@ -44,9 +32,7 @@ body {
 
 .todo__input {
   position: relative;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .todo__text {
@@ -70,10 +56,8 @@ body {
   margin: 0;
   border-radius: 5px;
   background-color: #7ef311;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   cursor: pointer;
-  -webkit-transition: background-color 0.15s ease-in;
   transition: background-color 0.15s ease-in;
 }
 
@@ -82,25 +66,17 @@ body {
 }
 
 .todo__add .bi-calendar-plus {
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
+  transform: translateY(-10%);
   vertical-align: middle;
   width: 25px;
   height: 25px;
 }
 
 .todo__items {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
   margin: 10px;
   width: 90vw;
 }
@@ -123,16 +99,12 @@ body {
 .todo__task {
   font-family: inherit;
   color: inherit;
-  -webkit-transition: -webkit-text-decoration 100ms ease-in-out;
-  transition: -webkit-text-decoration 100ms ease-in-out;
   transition: text-decoration 100ms ease-in-out;
-  transition: text-decoration 100ms ease-in-out, -webkit-text-decoration 100ms ease-in-out;
 }
 
 .todo__task:active {
   text-decoration: line-through;
-  -webkit-text-decoration-color: #a32d60;
-          text-decoration-color: #a32d60;
+  text-decoration-color: #a32d60;
 }
 
 footer {
@@ -151,4 +123,3 @@ footer p {
   padding: 10px;
   font-size: 1.25rem;
 }
-/*# sourceMappingURL=style.css.map */
