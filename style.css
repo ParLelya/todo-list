@@ -41,7 +41,7 @@ body {
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
-  border: 1px solid #eeecb6;
+  border: 2px solid #eeecb6;
   border-radius: 5px;
 }
 
@@ -66,10 +66,9 @@ body {
 }
 
 .todo__add .bi-calendar-plus {
-  transform: translateY(-10%);
   vertical-align: middle;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
 }
 
 .todo__items {
